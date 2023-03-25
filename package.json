@@ -1,7 +1,6 @@
 {
   "name": "front-end-amazon-v2",
   "version": "0.1.0",
-  "type": "commonjs",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -21,7 +20,9 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.8",
     "react-icons": "^4.8.0",
+    "react-loader-spinner": "^5.3.4",
     "react-redux": "^8.0.5",
     "react-simple-star-rating": "^5.1.7",
     "redux-persist": "^6.0.0",

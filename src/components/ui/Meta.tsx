@@ -8,9 +8,9 @@ interface ISeo {
 	image?: string
 }
 
-export const titleMerge = (title: string) => `${title} | Amazon v-2`
+export const titleMerge = (title: string) => `${title} | Amazon v2`
 
-export const Meta: FC<PropsWithChildren<ISeo>> = ({
+const Meta: FC<PropsWithChildren<ISeo>> = ({
 	title,
 	description,
 	image,
@@ -49,3 +49,5 @@ export const Meta: FC<PropsWithChildren<ISeo>> = ({
 		</>
 	)
 }
+
+export default Meta

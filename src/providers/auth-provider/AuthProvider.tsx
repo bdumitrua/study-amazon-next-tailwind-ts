@@ -24,7 +24,7 @@ const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 		if (accessToken) {
 			checkAuth()
 		}
-	})
+	}, [])
 
 	useEffect(() => {
 		const refreshToken = Cookies.get('refreshToken')
