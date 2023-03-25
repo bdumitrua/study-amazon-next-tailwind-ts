@@ -3,7 +3,7 @@ import { getAccessToken, removeFromStorage } from './../services/auth/auth.helpe
 import { AuthService } from './../services/auth/auth.service';
 import { errorCatch, getContentType } from './api.helper';
 
-const instance = axios.create({
+export const instance = axios.create({
     baseURL: process.env.SERVER_URL,
     headers: getContentType()
 })
@@ -29,7 +29,7 @@ instance.interceptors.response.use(config => config, async error => {
             error.config && 
             !error.config._isRetry 
         ){
-            originalRequest._isRetry = true
+            originalRequest._isRetry = true 
             try {
                 await AuthService.getNewTokens()
                 return instance.request(originalRequest)
@@ -38,5 +38,7 @@ instance.interceptors.response.use(config => config, async error => {
                     removeFromStorage()
             }
         }
+        
+        throw error;
     }
 )

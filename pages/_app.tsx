@@ -1,7 +1,44 @@
-import '@/assets/styles/globals.css'
+import { QueryClient } from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query/build/lib/QueryClientProvider'
 import type { AppProps } from 'next/app'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import AuthProvider from '@/providers/auth-provider/AuthProvider'
+import { TypeComponentAuthFields } from '@/providers/auth-provider/auth-page.types'
+
+import '@/assets/styles/globals.css'
+
+import { persistor, store } from '@/store/store'
+
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false
+		}
+	}
+})
+
+export default function App({
+	Component,
+	pageProps
+}: AppProps & TypeComponentAuthFields) {
+	return (
+		// TanStack (React) Query
+		<QueryClientProvider client={queryClient}>
+			{/* Redux */}
+			<Provider store={store}>
+				{/* Redux localstorage */}
+				<PersistGate loading={null} persistor={persistor}>
+					{/* Checking auth if nedeed */}
+					<AuthProvider
+						Component={{ isOnlyUser: Component.isOnlyUser }}
+					>
+						{/* Page */}
+						<Component {...pageProps} />
+					</AuthProvider>
+				</PersistGate>
+			</Provider>
+		</QueryClientProvider>
+	)
 }
-  
