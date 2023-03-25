@@ -14,7 +14,7 @@ export const Meta: FC<PropsWithChildren<ISeo>> = ({
 	title,
 	description,
 	image,
-	children
+	children = {}
 }) => {
 	const { asPath } = useRouter()
 	const currentUrl = `${process.env.APP_URL}${asPath}`
@@ -45,7 +45,7 @@ export const Meta: FC<PropsWithChildren<ISeo>> = ({
 					<meta name='robots' content='noindex, nofollow' />
 				)}
 			</Head>
-			{children}
+			<>{children}</>
 		</>
 	)
 }

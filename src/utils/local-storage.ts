@@ -1,8 +1,7 @@
 export const getStoreLocal = (name: string) => { 
-    if (typeof localStorage === 'undefined'){
-        return null
+    if (typeof localStorage !== 'undefined'){
+        const ls = localStorage.getItem(name) 
+        return ls ? JSON.stringify(ls) : null 
     }
-
-    const ls = localStorage.getItem(name) 
-    return ls ? JSON.parse(ls) as string : null 
+    return null
 } 

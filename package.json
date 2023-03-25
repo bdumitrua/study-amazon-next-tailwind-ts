@@ -1,6 +1,7 @@
 {
   "name": "front-end-amazon-v2",
   "version": "0.1.0",
+  "type": "commonjs",
   "private": true,
   "scripts": {
     "dev": "next dev",
