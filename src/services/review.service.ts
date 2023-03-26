@@ -11,6 +11,12 @@ export const ReviewService = {
             method: 'GET'
         })
     },
+    async getAverageByProduct(productId: string | number){ 
+        return instance<number>({
+            url: `${REVIEWS}/average-by-product/${productId}`, 
+            method: 'GET'
+        }) 
+    },
     async leave(productId: string | number, data: TypeReviewUpdate ){
         return instance<IReview>({
             url: `${REVIEWS}/leave/${productId}`,

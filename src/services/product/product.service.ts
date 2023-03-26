@@ -8,8 +8,8 @@ export const ProductService = {
     // Gets
     async getAll(queryData = {} as TypeProductDataFilters){ 
         return instance<TypePaginationProducts>({
-            url: PRODUCTS,  
-            method: 'GET', 
+            url: PRODUCTS,   
+            method: 'GET',  
             params: queryData 
         })
     },
@@ -25,15 +25,15 @@ export const ProductService = {
             method: 'GET', 
         })
     }, 
-    async getById(id: string | number){ 
-        return instance<IProduct>({ 
-            url: `${PRODUCTS}/by-slug/${id}`, 
+    async getByCategory(categorySlug: string){ 
+        return instance<IProduct>({  
+            url: `${PRODUCTS}/by-category/${categorySlug}`, 
             method: 'GET', 
         })
     },
-    async getByCategory(categorySlug: string){ 
+    async getById(id: string | number){ 
         return instance<IProduct>({ 
-            url: `${PRODUCTS}/by-category/${categorySlug}`, 
+            url: `${PRODUCTS}/by-slug/${id}`, 
             method: 'GET', 
         })
     }, 

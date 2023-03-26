@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SubmitHandler } from 'react-hook-form/dist/types'
-import { Oval } from 'react-loader-spinner'
 
 import Heading from '@/components/ui/Heading'
+import Loader from '@/components/ui/Loader'
 import Meta from '@/components/ui/Meta'
 import Button from '@/components/ui/button/button'
 import Field from '@/components/ui/input/Field'
@@ -54,18 +54,7 @@ const Auth: FC = () => {
 					{/* Loader */}
 
 					{isLoading ? (
-						<Oval
-							height={80}
-							width={80}
-							color='#4fa94d'
-							wrapperStyle={{}}
-							wrapperClass=''
-							visible={true}
-							ariaLabel='oval-loading'
-							secondaryColor='#4fa94d'
-							strokeWidth={2}
-							strokeWidthSecondary={2}
-						/>
+						<Loader />
 					) : (
 						<>
 							<Field
