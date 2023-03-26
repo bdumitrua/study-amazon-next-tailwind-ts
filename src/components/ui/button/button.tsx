@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant: 'orange' | 'white'
-	size: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg'
 }
 
 const Button: FC<PropsWithChildren<IButton>> = ({

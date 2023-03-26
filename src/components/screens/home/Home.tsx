@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import Meta from '@/components/ui/Meta'
-import Button from '@/components/ui/button/button'
+import Button from '@/components/ui/button/Button'
 import CatalogPagination from '@/components/ui/catalog/CatalogPagination'
 import Layout from '@/components/ui/layout/Layout'
 
@@ -17,14 +17,13 @@ const Home: FC<TypePaginationProducts> = ({ products, length }) => {
 	return (
 		<Meta title='Home'>
 			<Layout>
-				{/* Carousel */}
 				{!!user && (
 					<Button variant='orange' onClick={() => logout()} size='md'>
 						Logout
 					</Button>
 				)}
 				<CatalogPagination
-					products={products || []}
+					data={{ products, length }}
 					title='Home catalog'
 				/>
 			</Layout>

@@ -4,7 +4,7 @@ import { IProduct } from '@/types/product.interface'
 
 import Heading from '../Heading'
 import Loader from '../Loader'
-import Button from '../button/button'
+import Button from '../button/Button'
 
 import ProductItem from './product-item/ProductItem'
 

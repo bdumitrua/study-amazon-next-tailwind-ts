@@ -5,7 +5,7 @@ import { SubmitHandler } from 'react-hook-form/dist/types'
 import Heading from '@/components/ui/Heading'
 import Loader from '@/components/ui/Loader'
 import Meta from '@/components/ui/Meta'
-import Button from '@/components/ui/button/button'
+import Button from '@/components/ui/button/Button'
 import Field from '@/components/ui/input/Field'
 
 import { IEmailPassword } from '@/store/user/user.interface'
