@@ -9,9 +9,9 @@ import SquareButton from '@/components/ui/button/SquareButton'
 import { useCart } from '@/hooks/useCart'
 import { useOutside } from '@/hooks/useOutside'
 
-import { converPrice } from '@/utils/convertPrice'
+// import { converPrice } from '@/utils/convertPrice'
 
-import CartItem from './cart-item/CartItem'
+// import CartItem from './cart-item/CartItem'
 
 const Cart: FC = () => {
 	const { isShow, setIsShow, ref } = useOutside(false)
@@ -38,7 +38,7 @@ const Cart: FC = () => {
 			>
 				<div className='font-normal text-lg mb-5'>MyCart</div>
 
-				<div className={styles.cart}>
+				{/* <div className={styles.cart}>
 					{items.length ? (
 						items.map(item => (
 							<CartItem item={item} key={item.id} />
@@ -51,7 +51,7 @@ const Cart: FC = () => {
 				<div className={styles.footer}>
 					<div>Total:</div>
 					<div>{converPrice(total)}</div>
-				</div>
+				</div> */}
 				<div className='text-center'>
 					<Button
 						variant='white'
